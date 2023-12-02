@@ -2,7 +2,9 @@
 using System.Text;
 using GameStore.Models;
 using GameStore.Resources;
+using System.Data.SqlClient;
 
+const string connectionString = "Server=localhost;Database=AkhshamBazariDb;User Id=sa;Password=Admin9264!!;";
 HttpListener httpListener = new HttpListener();
 
 const int port = 8080;
@@ -90,12 +92,17 @@ while (true)
                         Categories = new List<Category> {Category.FPS}
                     }
                 };
+                using var connection = new System.Data.SqlClient.SqlConnection(connectionString);
+                var games = await connection.QueryAsync<Game>("select * from Products");
 
-                var productsHtml = GetHtml(products);
-                await writer.WriteLineAsync(productsHtml);
+                var gamesHtml = GetHtml(products);
+                await writer.WriteLineAsync(gamesHtml);
                 context.Response.ContentType = "text/html";
 
                 context.Response.StatusCode = (int)HttpStatusCode.OK;
+            }
+            else {
+                context.Response.StatusCode = (int)HttpStatusCode.MethodNotAllowed;
             }
 
             break;
