@@ -12,13 +12,14 @@ namespace GameStore.Controllers
     public class GameController : Controller
     {
         private readonly GameResources resources = new GameResources();
+        
         [HttpGet]
         public IActionResult GetGames()
         {
             var games = resources.GetGames();
             if(games is null)
                 return NotFound("No games");
-            return Ok(games);
+            return View(games);
         }
         [HttpGet]
         public IActionResult GetGameById(int id)
@@ -27,7 +28,7 @@ namespace GameStore.Controllers
             if(game is null){
                 return NotFound($"Game(id={id}) not found");
             }
-            return Ok(game);
+            return View(game);
         }
         [HttpGet]
         public IActionResult GetGameByName(string name)
@@ -36,7 +37,7 @@ namespace GameStore.Controllers
             if(game is null){
                 return NotFound($"Game(name={name}) not found");
             }
-            return Ok(game);
+            return View(game);
         }
         [HttpPost]
         public IActionResult AddGame(Game game){

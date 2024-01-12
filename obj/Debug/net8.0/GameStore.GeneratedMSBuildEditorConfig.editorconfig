@@ -18,6 +18,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Asif\GameStore
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Asif/GameStore/Views/Add/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asif/GameStore/Views/Get/Get.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2V0XEdldC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asif/GameStore/Views/Get/GetByIN.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2V0XEdldEJ5SU4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Asif/GameStore/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
