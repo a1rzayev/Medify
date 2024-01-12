@@ -29,6 +29,15 @@ namespace GameStore.Controllers
             }
             return Ok(game);
         }
+        [HttpGet]
+        public IActionResult GetGameByName(string name)
+        {
+            var game = resources.GetGameByName(name);
+            if(game is null){
+                return NotFound($"Game(name={name}) not found");
+            }
+            return Ok(game);
+        }
         [HttpPost]
         public IActionResult AddGame(Game game){
             try

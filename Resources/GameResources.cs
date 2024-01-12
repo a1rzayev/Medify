@@ -25,6 +25,14 @@ public class GameResources
             param: new { Id = Id });
     }
 
+    public Game? GetGameByName(string name)
+    {
+        using var connection = new SqlConnection(ConnectionString);
+        return connection.QueryFirstOrDefault<Game>(
+            sql: "select top 1 * from games where Name = @Name",
+            param: new { Name = name });
+    }
+
 
     public void AddGame(Game game)
     {
