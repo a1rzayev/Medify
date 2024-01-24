@@ -7,7 +7,7 @@ using GameStore.Models;
 using Dapper;
 
 namespace GameStore.Resources;
-public class Resources
+public class GameResources
 {
 
     private const string connectionString = $"Server=localhost;Database=GameStoreDB;Trusted_Connection=True;TrustServerCertificate=True;";
