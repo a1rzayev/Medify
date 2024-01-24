@@ -40,14 +40,14 @@ namespace GameStore.Controllers
             var count = gameResources.AddGame(game);
             if(count == 0)
                 return StatusCode(505);
-            return Ok();
+            return View();
         }
         [HttpDelete]
         public IActionResult DeleteGame(int id){
             var count = gameResources.DeleteGame(id);
             if(count==0)
                 return NotFound();
-            return Ok();
+            return View();
         }
     }
 }

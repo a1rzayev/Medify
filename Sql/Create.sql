@@ -1,6 +1,6 @@
-create database GameStoreDB;
+create database gamestore;
 
-use GameStoreDB;
+use gamestore;
 
 create table Games (
     [Id] int primary key identity,
