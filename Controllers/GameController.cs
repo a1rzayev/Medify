@@ -9,25 +9,25 @@ namespace GameStore.Controllers
 {
     public class GameController : Controller
     {
-        [HttpGet]
-        public IActionResult GetGames(){
+        // [HttpGet]
+        // public IActionResult GetGames(){
+            
+        // }
+        // [HttpGet]
+        // public IActionResult GetGameById(int id){
 
-        }
-        [HttpGet]
-        public IActionResult GetGameById(int id){
+        // }
+        // [HttpGet]
+        // public IActionResult GetGameByName(string name){
 
-        }
-        [HttpGet]
-        public IActionResult GetGameByName(string name){
+        // }
+        // [HttpPost]
+        // public IActionResult AddGame(Game game){
 
-        }
-        [HttpPost]
-        public IActionResult AddGame(Game game){
+        // }
+        // [HttpDelete]
+        // public IActionResult DeleteGame(int id){
 
-        }
-        [HttpDelete]
-        public IActionResult DeleteGame(int id){
-
-        }
+        // }
     }
 }
