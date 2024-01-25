@@ -1,7 +1,12 @@
+using GameStore.Resources;
+using GameStore.Resources.Base;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<IResources, GameResources>();
 
 var app = builder.Build();
 

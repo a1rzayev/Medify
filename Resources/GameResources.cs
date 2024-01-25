@@ -5,12 +5,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using GameStore.Models;
 using Dapper;
+using GameStore.Resources.Base;
 
 namespace GameStore.Resources;
-public class GameResources
+public class GameResources : IResources
 {
 
-    private const string connectionString = $"Server=localhost;Database=GameStoreDB;Trusted_Connection=True;TrustServerCertificate=True;";
+    private const string connectionString = $"Server=(localdb)\\GameStoreDB;Database=gamestore;Trusted_Connection=True;TrustServerCertificate=True;";
 
     public IEnumerable<Game> GetGames()
     {

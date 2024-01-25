@@ -5,15 +5,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GameStore.Models;
 using GameStore.Resources;
+using GameStore.Resources.Base;
 
 namespace GameStore.Controllers
 {
-    public class GameController : Controller
+    public class GameController : BaseController
     {
-        private readonly GameResources gameResources = new GameResources();
+        private readonly IResources resources;
+        public GameController(IResources resources){
+            this.resources = resources;
+        }       
         [HttpGet]
         public IActionResult GetGames(){
-            var games = gameResources.GetGames();
+            var games = resources.GetGames();
             if(games is null){
                 return NotFound("Nothing Found");
             }
@@ -21,7 +25,7 @@ namespace GameStore.Controllers
         }
         [HttpGet]
         public IActionResult GetGameById(int id){
-            var game = gameResources.GetGameById(id);
+            var game = resources.GetGameById(id);
             if(game is null){
                 return NotFound($"Game({id}) not found");
             }
@@ -29,7 +33,7 @@ namespace GameStore.Controllers
         }
         [HttpGet]
         public IActionResult GetGameByName(string name){
-            var game = gameResources.GetGameByName(name);
+            var game = resources.GetGameByName(name);
             if(game is null){
                 return NotFound($"({name}) not found");
             }
@@ -37,14 +41,14 @@ namespace GameStore.Controllers
         }
         [HttpPost]
         public IActionResult AddGame(Game game){
-            var count = gameResources.AddGame(game);
+            var count = resources.AddGame(game);
             if(count == 0)
                 return StatusCode(505);
             return View();
         }
         [HttpDelete]
         public IActionResult DeleteGame(int id){
-            var count = gameResources.DeleteGame(id);
+            var count = resources.DeleteGame(id);
             if(count==0)
                 return NotFound();
             return View();
