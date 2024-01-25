@@ -58,16 +58,16 @@ public class GameResources : IResources
         );
     }
 
-    public  int DeleteGame(int id)
-    {
-        using var connection = new SqlConnection(connectionString);
-        return connection.Execute(
-            @"delete Games where Id = @Id",
-            param: new
-            {
-                Id = id,
-            }
-        );
-    }
+    // public  int DeleteGame(int id)
+    // {
+    //     using var connection = new SqlConnection(connectionString);
+    //     return connection.Execute(
+    //         @"delete Games where Id = @Id",
+    //         param: new
+    //         {
+    //             Id = id,
+    //         }
+    //     );
+    // }
 
 }

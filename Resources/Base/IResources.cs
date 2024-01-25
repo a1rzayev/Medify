@@ -13,6 +13,6 @@ namespace GameStore.Resources.Base
         public Game? GetGameById(int id);
         public Game? GetGameByName(string name);
         public int AddGame(Game game);
-        public int DeleteGame(int id);
+        // public int DeleteGame(int id);
     }
 }

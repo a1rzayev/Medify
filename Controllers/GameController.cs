@@ -46,12 +46,11 @@ namespace GameStore.Controllers
                 return StatusCode(505);
             return View();
         }
-        [HttpDelete]
-        public IActionResult DeleteGame(int id){
-            var count = resources.DeleteGame(id);
-            if(count==0)
-                return NotFound();
-            return View();
-        }
+        // public IActionResult DeleteGame(int id){
+        //     var count = resources.DeleteGame(id);
+        //     if(count==0)
+        //         return NotFound();
+        //     return View();
+        // }
     }
 }
