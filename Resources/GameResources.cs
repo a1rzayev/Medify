@@ -11,8 +11,10 @@ namespace GameStore.Resources;
 public class GameResources : IResources
 {
 
-    private const string connectionString = $"Server=(localdb)\\GameStoreDB;Database=gamestore;Trusted_Connection=True;TrustServerCertificate=True;";
-
+    private readonly string connectionString;
+    public GameResources(string connection){
+        this.connectionString = connection;
+    }
     public IEnumerable<Game> GetGames()
     {
         using var connection = new SqlConnection(connectionString);

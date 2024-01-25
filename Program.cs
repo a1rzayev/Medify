@@ -6,7 +6,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddTransient<IResources, GameResources>();
+builder.Services.AddTransient<IResources>(provider => {
+    const string connectionStringName = "GameStoreDB";
+    string? connectionString = builder.Configuration.GetConnectionString(connectionStringName);
+    if(string.IsNullOrWhiteSpace(connectionString)) 
+        throw new Exception($"{connectionStringName} not found");
+    return new GameResources(connectionString);
+});
+
+
 
 var app = builder.Build();
 

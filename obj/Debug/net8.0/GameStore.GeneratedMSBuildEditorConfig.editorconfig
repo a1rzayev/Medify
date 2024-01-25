@@ -18,16 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\Asif\GameStore
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Asif/GameStore/Views/Games/AddGame.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZXNcQWRkR2FtZS5jc2h0bWw=
+[C:/Users/Asif/GameStore/Views/Game/AddGame.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxBZGRHYW1lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asif/GameStore/Views/Games/GetGameById.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZXNcR2V0R2FtZUJ5SWQuY3NodG1s
+[C:/Users/Asif/GameStore/Views/Game/GetGameById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxHZXRHYW1lQnlJZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asif/GameStore/Views/Games/GetGames.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZXNcR2V0R2FtZXMuY3NodG1s
+[C:/Users/Asif/GameStore/Views/Game/GetGames.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxHZXRHYW1lcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Asif/GameStore/Views/Home/Index.cshtml]
