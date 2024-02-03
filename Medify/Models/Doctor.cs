@@ -17,7 +17,7 @@ public class Doctor : IPerson
     public DateTime Birth { get; set; }
     public SpecialityEnum Speciality { get; set; }
     public IEnumerable<HospitalEnum> Hospitals { get; set; }
-    public bool isPaid { get; set; }
+    public bool IsPaid { get; set; }
     public SubscriptionEnum Subscription { get; set; }
-    public DateTime subsciptionStartDate { get; set; }
+    public DateTime SubsciptionStartDate { get; set; }
 }

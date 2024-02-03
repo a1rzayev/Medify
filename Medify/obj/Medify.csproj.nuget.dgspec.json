@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asif\\Medify\\Medify\\Medify.csproj": {}
+    "c:\\Users\\Asif\\Medify\\Medify\\Medify.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asif\\Medify\\Medify\\Medify.csproj": {
+    "c:\\Users\\Asif\\Medify\\Medify\\Medify.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asif\\Medify\\Medify\\Medify.csproj",
+        "projectUniqueName": "c:\\Users\\Asif\\Medify\\Medify\\Medify.csproj",
         "projectName": "Medify",
-        "projectPath": "C:\\Users\\Asif\\Medify\\Medify\\Medify.csproj",
+        "projectPath": "c:\\Users\\Asif\\Medify\\Medify\\Medify.csproj",
         "packagesPath": "C:\\Users\\Asif\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asif\\Medify\\Medify\\obj\\",
+        "outputPath": "c:\\Users\\Asif\\Medify\\Medify\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.28, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
