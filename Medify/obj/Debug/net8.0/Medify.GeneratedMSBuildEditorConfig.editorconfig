@@ -18,6 +18,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = c:\Users\Asif\Medify\Medify
 build_property._RazorSourceGeneratorDebug = 
 
+[c:/Users/Asif/Medify/Medify/Views/Doctors/AddDoctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yc1xBZGREb2N0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Asif/Medify/Medify/Views/Doctors/GetDoctorById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yc1xHZXREb2N0b3JCeUlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Asif/Medify/Medify/Views/Doctors/GetDoctors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yc1xHZXREb2N0b3JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/Asif/Medify/Medify/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

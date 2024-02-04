@@ -23,7 +23,7 @@ public class DoctorController : Controller
         public IActionResult GetDoctorById(int id){
             var doctor = medRepository.GetDoctorById(id);
             if(doctor is null){
-                return NotFound($"Game({id}) not found");
+                return NotFound($"Doctor ({id}) not found");
             }
             return View(doctor);
         }
