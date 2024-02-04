@@ -43,9 +43,10 @@ public class DoctorController : Controller
             return Ok();
         }
         [HttpDelete]
-        public IActionResult DeleteGame(int id){
-            var count = medRepository.DeleteGame(id);
+        public IActionResult DeleteDoctor(int id){
+            var count = medRepository.DeleteDoctor(id);
             if(count==0)
                 return NotFound();
             return Ok();
+        }
 }
