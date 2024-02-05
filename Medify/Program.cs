@@ -8,8 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddTransient<IRepository, MedRepository>();
-
+builder.Services.AddTransient<IRepository>(provider => {
+    const string connectionStringName = "MedifyDB";
+    string? connectionString = builder.Configuration.GetConnectionString(connectionStringName);
+    if(string.IsNullOrWhiteSpace(connectionString)) 
+        throw new Exception($"{connectionStringName} not found");
+    return new MedRepository(connectionString);
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

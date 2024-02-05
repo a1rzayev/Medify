@@ -9,7 +9,10 @@ using Medify.Repositories.Base;
 namespace Medify.Repositories;
 public class MedRepository : IRepository
 {
-    private const string connectionString = $"Server=(localdb)\\MedifyDB;Database=medify;Trusted_Connection=True;TrustServerCertificate=True;";
+    private readonly string connectionString;
+    public MedRepository(string connection){
+        this.connectionString = connection;
+    }
     public int AddDoctor(Doctor doctor)
     {
         using var connection = new SqlConnection(connectionString);
