@@ -5,15 +5,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Medify.Models;
 using Medify.Resources;
+using Medify.Repositories.Base;
 
 namespace Medify.Controllers;
 
-public class DoctorController : Controller
+public class DoctorController : BaseController
 {
-   private readonly MedRepository medRepository = new MedRepository();
+    private readonly IRepository repository;
+        public DoctorController(IRepository repository){
+            this.repository = repository;
+        }   
+        
         [HttpGet]
         public IActionResult GetDoctors(){
-            var doctors = medRepository.GetDoctors();
+            var doctors = repository.GetDoctors();
             if(doctors is null){
                 return NotFound("Nothing Found");
             }
@@ -21,7 +26,7 @@ public class DoctorController : Controller
         }
         [HttpGet]
         public IActionResult GetDoctorById(int id){
-            var doctor = medRepository.GetDoctorById(id);
+            var doctor = repository.GetDoctorById(id);
             if(doctor is null){
                 return NotFound($"Doctor ({id}) not found");
             }
@@ -29,7 +34,7 @@ public class DoctorController : Controller
         }
         [HttpGet]
         public IActionResult GetDoctorByName(string name){
-            var doctor = medRepository.GetDoctorByName(name);
+            var doctor = repository.GetDoctorByName(name);
             if(doctor is null){
                 return NotFound($"({name}) not found");
             }
@@ -44,7 +49,7 @@ public class DoctorController : Controller
         }
         [HttpDelete]
         public IActionResult DeleteDoctor(int id){
-            var count = medRepository.DeleteDoctor(id);
+            var count = repository.DeleteDoctor(id);
             if(count==0)
                 return NotFound();
             return Ok();

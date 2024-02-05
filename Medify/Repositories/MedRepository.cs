@@ -5,16 +5,32 @@ using System.Linq;
 using System.Threading.Tasks;
 using Medify.Models;
 using Dapper;
-namespace Medify.Resources;
-public class MedRepository
+using Medify.Repositories.Base;
+namespace Medify.Repositories;
+public class MedRepository : IRepository
 {
-
-    private const string connectionString = $"Server=localhost;Database=MedifyDB;Trusted_Connection=True;TrustServerCertificate=True;";
-
-    public IEnumerable<Doctor> GetDoctors()
+    private const string connectionString = $"Server=(localdb)\\MedifyDB;Database=medify;Trusted_Connection=True;TrustServerCertificate=True;";
+    public int AddDoctor(Doctor doctor)
     {
         using var connection = new SqlConnection(connectionString);
-        return connection.Query<Doctor>("select * from Doctors");
+        return connection.Execute(
+            @"insert into Games (FIN, Phone, Mail, Name, Surname, Birth, Speciality, Hospitals, IsPaid, Subscription, SubscriptionStartDate)
+             values (@FIN, @Phone, @Mail, @Name, @Surname, @Birth, @Speciality, @Hospitals, @IsPaid, @Subscription, @SubscriptionStartDate)",
+            param: new
+            {
+                doctor.FIN,
+                doctor.Phone,
+                doctor.Mail,
+                doctor.Name,
+                doctor.Surname,
+                doctor.Birth,
+                doctor.Speciality,
+                doctor.Hospitals,
+                doctor.IsPaid,
+                doctor.Subscription,
+                doctor.SubsciptionStartDate,
+            }
+        );
     }
 
     public Doctor? GetDoctorById(int id)
@@ -39,28 +55,10 @@ public class MedRepository
         );
     }
 
-
-    public int AddDoctor(Doctor doctor)
+    public IEnumerable<Doctor> GetDoctors()
     {
         using var connection = new SqlConnection(connectionString);
-        return connection.Execute(
-            @"insert into Games (FIN, Phone, Mail, Name, Surname, Birth, Speciality, Hospitals, IsPaid, Subscription, SubscriptionStartDate)
-             values (@FIN, @Phone, @Mail, @Name, @Surname, @Birth, @Speciality, @Hospitals, @IsPaid, @Subscription, @SubscriptionStartDate)",
-            param: new
-            {
-                doctor.FIN,
-                doctor.Phone,
-                doctor.Mail,
-                doctor.Name,
-                doctor.Surname,
-                doctor.Birth,
-                doctor.Speciality,
-                doctor.Hospitals,
-                doctor.IsPaid,
-                doctor.Subscription,
-                doctor.SubsciptionStartDate,
-            }
-        );
+        return connection.Query<Doctor>("select * from Doctors");
     }
 
     public int DeleteDoctor(int id)

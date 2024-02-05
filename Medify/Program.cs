@@ -1,7 +1,14 @@
+using Medify.Repositories;
+using Medify.Repositories.Base;
+using Medify.Resources;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<IRepository, MedRepository>();
 
 var app = builder.Build();
 
