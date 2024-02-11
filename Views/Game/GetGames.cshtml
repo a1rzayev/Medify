@@ -1,0 +1,37 @@
+@model IEnumerable<Game>
+@{
+  Game game = new Game();
+}
+<div class="card" style="width: 18rem;">
+  <ul class = "border border-dark-subtle" class="list-group list-group-flush">
+    <form asp-controller="Game" asp-action ="AddGame">
+      <div>
+        <label asp-for="@game.Id">Id: </label>
+        <input type="text" asp-for="@game.Id">
+      </div>
+      <div>
+        <label asp-for="@game.Name">Name: </label>
+        <input type="text" asp-for="@game.Name">
+      </div>
+      <div>
+        <label asp-for="@game.Category">Category: </label>
+        <input type="text" asp-for="@game.Category">
+      </div>
+      <div>
+        <label asp-for="@game.Price">Price: </label>
+        <input type="text" asp-for="@game.Price">
+      </div>
+      <button>Add</button>
+    </form>
+    @foreach(var item in @Model){
+      <li class="list-group-item">
+        <form asp-controller="Game" asp-action ="DeleteGame">
+          <div>Name: @item.Name</div>
+          <div>Category: @item.Category</div>
+          <div>Price: @item.Price</div>
+          @* <button onclick= "submitDeleteForm('@item.Id')" >Delete</button> *@
+        </form>
+      </li>
+    }
+  </ul>
+</div>
